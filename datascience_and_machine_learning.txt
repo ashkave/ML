@@ -1,0 +1,2853 @@
+machine learning and data science
+
+https://github.com/mrdbourke/zero-to-mastery-ml
+
+
+# Narrow AI
+
+-- machines doing a specific task better than humans
+
+# General AI
+
+-- machines able to multilple tasks like humans
+
+# Machine Learning
+
+-- Is a subset of AI, it is a science of mkaing machines to do things without us explicitly programming it to do them
+-- machine learning systems can find patterns from a set of data
+
+
+# Deep Learning
+
+-- subset of Machine learning
+-- Deep neural networks
+-- its a specific subset of machine learning algorithms
+
+# Data Science
+
+-- analyzing data for a business goal. This can be done using machine learning
+
+#Teachable machine project ( google)
+https://teachablemachine.withgoogle.com/train/image
+
+# machine learning playground
+https://ml-playground.com/#
+
+# Types of machine learning
+
+-- Supervised learning
+-- unsupervised learning
+-- reinforcement learning
+
+# Supervised learning
+
+-- labelled dataset
+-- classification (apples or oranges)
+
+-- regression (stock price prediction etc)
+
+# Unsupervised learning
+
+-- unlabelled dataset
+-- clustering (similar datapoints together)
+-- association rule learning (predicting what a user can buy next)
+
+# reinforcement learning
+
+-- learning by rewards and punishment
+
+# transfer learning
+
+-- using a already trained model and tuning it for a difference problem with another domain specific data
+
+# All of machine learning is trying to learn from the data and predict future outcomes
+
+# Machine learning and Data Science framework
+
+-- Main steps invloving any machine learning problem - data collection, data modelling and deployment
+
+-- the framework is built for data modelling which is the most important task in any ML problem
+
+# Data Modelling
+
+-- Steps in data modelling
+
+1. Problem definition -- what type of machine learning algo to be used - supervised or unsupervised, classification or regression.
+
+# not all problems need machine learning. If you have a simple step by step approach that works, then you do not need machine learning
+
+# identify if your business problem can benefit from machine learning
+
+# Most problems can be classified into one of the following
+a. Supervised learning
+- Classification -- binary or multi class
+- Regression
+b.Unsuperized learning
+- clustering
+- recommendation
+c. transfer learning
+- when problem is similar to some other problem which has already been solved and has a model
+
+-- Figure out which type of machine learning may fit your problem best
+-- Are you classifying something
+-- Are you trying to predict something
+-- Do you have labelled or unlabelled data
+-- Are you trying to figure out labels yourself by clustering
+
+
+2. Data  -- what data do we have -- structured  or unstructured
+-- structured data - can be arranged in rows and columns. like spreadsheets etc
+-- unstructured data - can be like audio, video, natural language text etc
+-- static or streaming data
+
+3. Evaluation -- accuracy -- what is the end goal of algorithm, what is out base level accuracy -- there is no perfect model
+
+-- accuracy precision and recall
+-- there are different metrics to evaluate the above based on the machine learning type
+
+4. Data Features -- what do we know about our data  -- if weight is more than 100 kg, there is more likelier chance of heart disease
+-- feature learning
+-- feature variables
+-- what kind of features
+
+# feature variables
+
+-- numerical like age 
+-- categorical like sex
+-- derived -- from other feature variables
+
+# target variables
+
+-- The end goal for the model to predict. example - determine whether a person has heart disease or not
+
+# feature coverage
+
+-- need complete data for the samples
+
+
+
+5. Modelling -- which model to use, model training
+
+-- most important part of the framework
+-- consists of 3 data sets - training , validation and testing
+-- training set is like your entire course or subject in school. Validation is like practise exam . Testing is like final exam where you may see new or previously unknown questions but can be answered based on what you have learned through the course
+
+# 3 parts to modelling
+-- choosing and training a model
+-- tuning a model
+-- model comparison
+
+-- There are different types of models which can be suited to different kinds of problems. For example, for structured data decision trees are better suited like random forest , cat bootst etc. For unstructured data, neural networks and trasnfer learning are better suited
+
+# minimize experimentation time. Choose a smaller dataset for training and also choose a simpler model
+# machine learning is a iterative process
+# start small and build later, add more complexity
+
+#tuning
+# hyperparameters
+-- Tuning -- every model has some hyperparameters that can be tuned
+-- hyperparameters are different for different models
+
+
+# generalization - the ability of machine learning model to perform well on completely unseen data based on learning from training and validation dataset
+
+# comparison
+-- how model performs in real world
+
+# overfitting and underfitting
+-- if the test data set is more accurate or far less accurate than training data set
+-- avoid data leakage
+-- avoid data mismatch
+
+
+
+6. Experimentation
+
+-- try to solve same problem using a different model , or input.output
+
+
+
+# Framework article -  https://www.mrdbourke.com/a-6-step-field-guide-for-building-machine-learning-projects/
+
+
+# tools
+
+# tools for data analysis - pandas, matplotlib, numpy 
+
+# tools for modelling - pytorch, tensor flow, scikit-learn, xgboost etc
+
+# tools for entire framwork process - python, jupyter notebook
+
+# Anaconda - superset software for above tools
+
+https://www.elementsofai.com/
+
+# Tools
+
+-- Anaconda and miniconda are software distributions
+-- conda is pacakage manager
+
+https://docs.conda.io/en/latest/
+https://docs.conda.io/projects/conda/en/latest/user-guide/getting-started.html
+https://www.mrdbourke.com/get-your-computer-ready-for-machine-learning-using-anaconda-miniconda-and-conda/
+
+https://www.anaconda.com/docs/getting-started/miniconda/main#is-miniconda-free-for-me
+
+STEPS:
+
+1. install miniconda
+https://www.anaconda.com/docs/getting-started/miniconda/install/windows-gui-install
+2. open anaconda prompt
+3. create a new project directory
+4. Run
+conda create --prefix ./env pandas numpy matplotlib scikit-learn jupyter
+5. Activate the env
+
+conda activate <path>
+
+conda activate C:\Users\akavety\Desktop\codefiles_ashish\codefiles_ML\sample_project\env
+
+# exporting project
+
+conda env export --prefix /Users/daniel/Desktop/project_1/env > environment.yml
+
+-- creating an environment from yaml file
+
+conda env create --file environment.yml --name env_from_file
+
+===============================================
+(base) C:\Users\akavety>conda env list
+
+# conda environments:
+#
+                       C:\Users\akavety\Desktop\codefiles_ashish\codefiles_ML\sample_project\env
+base                 * C:\Users\akavety\anaconda3
+                       C:\Users\akavety\miniconda3
+
+
+(base) C:\Users\akavety>conda activate C:\Users\akavety\Desktop\codefiles_ashish\codefiles_ML\sample_project\env
+
+(C:\Users\akavety\Desktop\codefiles_ashish\codefiles_ML\sample_project\env) C:\Users\akavety>
+=========================================================
+
+#jupyter notebooks
+
+https://jupyter-notebook.readthedocs.io/en/stable/
+https://www.dataquest.io/blog/jupyter-notebook-tutorial/
+
+-- Jupyter notebook is run in order of number
+
+-- press esc to enter command mode
+
+B -- NEW LINE
+DD -- DELETE LINE
+SHIFT + ENTER - RUN
+SHIFT + TAB - GET INFO
+ESC + m - turn cell into markup
+
+
+# course notebooks
+
+https://github.com/mrdbourke/zero-to-mastery-ml
+
+#PANDAS
+
+
+# Data Analysis using Pandas
+
+https://pandas.pydata.org/pandas-docs/stable/
+https://pandas.pydata.org/pandas-docs/stable/user_guide/10min.html#min
+https://github.com/mrdbourke/zero-to-mastery-ml/blob/master/section-2-data-science-and-ml-tools/introduction-to-pandas-video.ipynb
+
+#PANDAS
+
+-- simple to use
+-- integrated with other ML/python tools
+-- helps get raw data ready for machine learning
+
+#conda env list
+
+# Pandas data types
+
+-- series and data frames
+
+# anatomy of data frame
+
+-- Check example 
+
+C:\Users\akavety\Desktop\codefiles_ashish\codefiles_ML\sample_project\.ipynb_checkpoints
+
+heart_disease = pd.read_csv("https://raw.githubusercontent.com/mrdbourke/zero-to-mastery-ml/master/data/heart-disease.csv")
+
+=================================================================
+#!/usr/bin/env python
+# coding: utf-8
+
+# In[1]:
+
+
+import pandas as pd
+
+
+# In[2]:
+
+
+car_series = pd.Series(["BMW","Toyota","Honda","Skoda"])
+
+
+# In[3]:
+
+
+car_series
+
+
+# Series is a 1d data type
+
+# In[4]:
+
+
+colour_series = pd.Series(["Red","Yellow","Blue","Pink"])
+
+
+# In[5]:
+
+
+colour_series
+
+
+# In[6]:
+
+
+df = pd.DataFrame({"car-make" : car_series, "colour":colour_series})
+
+
+# In[7]:
+
+
+df
+
+
+# In[9]:
+
+
+car_data = pd.read_csv("car-sales.csv")
+
+
+# In[10]:
+
+
+car_data
+
+
+# ## Describe Data
+
+# In[11]:
+
+
+car_data.dtypes
+
+
+# In[12]:
+
+
+car_data.columns
+
+
+# In[13]:
+
+
+car_columns = car_data.columns
+
+
+# In[14]:
+
+
+car_columns
+
+
+# In[15]:
+
+
+car_data.describe()
+
+
+# In[16]:
+
+
+car_data.info()
+
+
+# In[17]:
+
+
+car_data.index
+
+
+# ## Viewing and Selecting Data
+# 
+
+# In[18]:
+
+
+car_data.head()
+
+
+# In[19]:
+
+
+car_data.head(7)
+
+
+# In[20]:
+
+
+car_data.tail()
+
+
+# In[ ]:
+===============================================================================================================
+
+https://jakevdp.github.io/PythonDataScienceHandbook/03.00-introduction-to-pandas.html
+
+https://github.com/mrdbourke/zero-to-mastery-ml/blob/master/section-2-data-science-and-ml-tools/pandas-exercises.ipynb
+
+
+https://colab.research.google.com/
+
+# Try it, run your code
+# Search for it
+# Try again
+# Ask
+
+#NUMPY
+
+-- numerical python
+-- used for numerical calculations and hence forms foundation in ML
+
+-- like python lists but optimizations written in c 
+-- its faster that python lists
+
+https://github.com/mrdbourke/zero-to-mastery-ml/blob/master/section-2-data-science-and-ml-tools/introduction-to-numpy-video.ipynb
+https://numpy.org/doc/
+
+
+-- 1d arrays are known as vectors
+-- multi dimensional arrays are called matrices
+
+
+
+-- Standard deviation and Variance: they are measures of how data is spread
+
+https://www.mathsisfun.com/data/standard-deviation.html
+
+=============================================================================
+#!/usr/bin/env python
+# coding: utf-8
+
+# In[2]:
+
+
+import numpy as np
+
+
+# ## Datatypes and Attributes
+
+# In[3]:
+
+
+# NumPy's main datatype is an ndarray
+array1d = np.array([1,2,3])
+
+
+# In[4]:
+
+
+array1d
+
+
+# In[5]:
+
+
+array2d = np.array([[1,2,3],
+               [4,5,6]])
+
+
+# In[6]:
+
+
+array2d
+
+
+# In[7]:
+
+
+array3d = np.array([[[1,2,3],[4,5,6]],[[7,8,9],[10,11,12]]])
+
+
+# In[8]:
+
+
+array3d
+
+
+# In[9]:
+
+
+array1d.shape
+
+
+# In[10]:
+
+
+array2d.shape
+
+
+# In[11]:
+
+
+array3d.shape
+
+
+# In[12]:
+
+
+array3d.ndim
+
+
+# In[13]:
+
+
+type(array3d)
+
+
+# In[14]:
+
+
+array3d.size
+
+
+# In[15]:
+
+
+array3d.dtype
+
+
+# In[16]:
+
+
+import pandas as pd
+df = pd.DataFrame(array2d)
+df
+
+
+# In[17]:
+
+
+ones = np.ones((3,3))
+
+
+# In[18]:
+
+
+ones
+
+
+# In[19]:
+
+
+zeroes = np.zeros((2,2))
+
+
+# In[20]:
+
+
+zeroes
+
+
+# In[21]:
+
+
+random_array = np.random.randint(0,9,size=(3,3))
+
+
+# In[22]:
+
+
+random_array
+
+
+# In[23]:
+
+
+#pseudo random number. how to keep the random numbers from changing when sharing the JN to others
+np.random.seed(seed=0)
+random_array2 = np.random.randint(0,9,size=(5,3))
+random_array2
+
+
+# ## Viewing arrays and matrices
+
+# In[24]:
+
+
+np.unique(random_array)
+
+
+# ## Manipulating Arrays
+
+# ### Arithmetic Operations
+
+# In[25]:
+
+
+a1 = np.array([7,8,9])
+a1
+
+
+# In[26]:
+
+
+a2 = np.array([[4,5,6],[1,2,3],[3,3,9]])
+a2
+
+
+# In[27]:
+
+
+a3 = np.array([[[1,2,3],[2,3,4]],[[2,3,4],[3,4,5]],[[4,5,6],[5,6,7]]])
+a3
+
+
+# In[28]:
+
+
+a3.shape
+
+
+# In[29]:
+
+
+a2.shape
+
+
+# In[30]:
+
+
+a1 * a2
+
+
+# In[31]:
+
+
+ones = np.ones([3,4])
+
+
+# In[32]:
+
+
+ones
+
+
+# In[33]:
+
+
+ones = np.ones(3)
+
+
+# In[34]:
+
+
+ones
+
+
+# In[35]:
+
+
+a1
+
+
+# In[36]:
+
+
+a1 + ones
+
+
+# In[37]:
+
+
+a1 - ones
+
+
+# In[38]:
+
+
+a1 * a2
+
+
+# In[39]:
+
+
+a1
+
+
+# In[40]:
+
+
+a2
+
+
+# In[41]:
+
+
+a2*a3
+
+
+# In[42]:
+
+
+a2 = np.array([[1,2,3],[2,3,4]])
+
+
+# a2 
+
+# In[43]:
+
+
+a2
+
+
+# In[44]:
+
+
+a2 * a3
+
+
+# In[45]:
+
+
+a2 / a3
+
+
+# In[46]:
+
+
+a2 //a3
+
+
+# In[47]:
+
+
+a2 % 2
+
+
+# ## Aggregation
+
+# ### if working with python datatypes use python functions but if working with numpy arrays use numpy functions as they are much faster
+
+# In[48]:
+
+
+large_array = np.random.random(100000)
+large_array.size
+
+
+# In[49]:
+
+
+large_array[:10]
+
+
+# In[50]:
+
+
+get_ipython().run_line_magic('timeit', "sum(large_array) #python's sum")
+get_ipython().run_line_magic('timeit', "np.sum(large_array) # np's sum")
+
+
+# In[51]:
+
+
+a2
+
+
+# In[52]:
+
+
+np.mean(a2)
+
+
+# In[53]:
+
+
+np.max(a2)
+
+
+# In[54]:
+
+
+np.min(a2)
+
+
+# ### Mean is the sum of values divided by number of values
+
+# In[55]:
+
+
+a1 = np.array([4,5.6, 2,3, 6.8])
+
+
+# In[56]:
+
+
+a1
+
+
+# In[57]:
+
+
+np.mean(a1)
+
+
+# ### SD is how far the numbers are spread out from the mean. It is the squareroot of variance
+
+# In[58]:
+
+
+np.std(a1)
+
+
+# ### Variance is avg degree to which each number is different from the mean
+
+# In[59]:
+
+
+np.var(a1)
+
+
+# In[60]:
+
+
+np.sqrt(np.var(a1))
+
+
+# In[61]:
+
+
+low_var_array = np.array([2,4,6,8,10])
+
+
+# In[62]:
+
+
+low_var_array
+
+
+# In[63]:
+
+
+high_var_array = np.array([1,2,3,1000,2000,3000,200,300,400])
+
+
+# In[64]:
+
+
+high_var_array
+
+
+# In[65]:
+
+
+np.var(low_var_array)
+
+
+# In[66]:
+
+
+np.var(high_var_array)
+
+
+# In[67]:
+
+
+np.mean(low_var_array)
+
+
+# In[68]:
+
+
+np.mean(high_var_array)
+
+
+# In[69]:
+
+
+np.std(low_var_array)
+
+
+# In[70]:
+
+
+np.std(high_var_array)
+
+
+# In[71]:
+
+
+import matplotlib.pyplot as plt
+
+
+# In[72]:
+
+
+plt.hist(high_var_array)
+
+
+# In[73]:
+
+
+plt.hist(low_var_array)
+
+
+# In[ ]:
+
+=====================================================================================
+
+# Reshaping
+https://numpy.org/doc/stable/user/basics.broadcasting.html
+
+
+The term broadcasting describes how NumPy treats arrays with different shapes during arithmetic operations.
+
+https://www.mathsisfun.com/algebra/matrix-multiplying.html
+
+#dot product
+
+https://numpy.org/doc/stable/reference/generated/numpy.dot.html
+
+-- multipying 2 matrices
+
+-- columns in first matrix whould be equal to rows in second matrix
+
+-- reshape and transpose can help finding dot product
+
+https://github.com/mrdbourke/zero-to-mastery-ml/blob/master/section-2-data-science-and-ml-tools/introduction-to-numpy-video.ipynb
+
+
+exercise - https://github.com/mrdbourke/zero-to-mastery-ml/blob/master/section-2-data-science-and-ml-tools/numpy-exercises.ipynb
+
+#resource for numpy:
+
+https://jakevdp.github.io/PythonDataScienceHandbook/02.02-the-basics-of-numpy-arrays.html
+https://jalammar.github.io/visual-numpy/
+https://numpy.org/doc/1.17/user/quickstart.html
+
+#MATPLOTLIB
+
+# Data Visualization
+
+-- visually representing data
+-- should be accurate
+
+# matplotlib - plotting library with plots and figures
+
+-- built on numpy arrays and python
+
+-- integrates directly with pandas
+
+https://matplotlib.org/3.1.1/contents.html
+
+#matplotlib workflow
+
+STEPS:
+1. create data
+2. create plot  - axes and figure
+3. plot data
+4. customize plot - provide custom names for x and y axis
+5. save and share plot
+
+https://matplotlib.org/stable/tutorials/lifecycle.html
+
+Basic plots
+
+#line plot
+# scatterred plot
+# bar diagram
+# histogram
+# subplot
+
+## Ploting from Pandas DataFrames
+
+--https://regexone.com/
+
+https://github.com/mrdbourke/zero-to-mastery-ml/blob/master/section-2-data-science-and-ml-tools/introduction-to-matplotlib-video.ipynb
+
+
+=====================================================
+#!/usr/bin/env python
+# coding: utf-8
+
+# In[85]:
+
+
+get_ipython().run_line_magic('matplotlib', 'inline')
+
+
+# In[86]:
+
+
+import matplotlib.pyplot as plt
+import pandas as pd
+import numpy as np
+
+
+# In[87]:
+
+
+plt.plot()
+
+
+# In[88]:
+
+
+plt.plot();
+
+
+# In[89]:
+
+
+x =[1,2,3,4,5]
+y = [10,20,30,40,50]
+plt.plot(x,y);
+
+
+# In[90]:
+
+
+fig, ax = plt.subplots();
+ax.plot(x,y);
+
+
+# ## SAMPLE WORKFLOW
+
+# In[91]:
+
+
+# 1. import the libraries
+get_ipython().run_line_magic('matplotlib', 'inline')
+import matplotlib.pyplot as plt
+
+
+# In[92]:
+
+
+# 2. Prepare the data
+
+x = [ 1,2,3,4,5,6]
+y = [100,200,300,400,500,700]
+
+
+# In[93]:
+
+
+# 3. create figure
+fig, ax = plt.subplots()
+
+
+# In[94]:
+
+
+# 4. fill data
+ax.plot(x,y);
+
+
+# In[95]:
+
+
+ax.set(title = "Simple Plot", xlabel="items",ylabel = "prices")
+
+
+# In[96]:
+
+
+fig.savefig("images/simple-plot.png")
+
+
+# ## numpy arrays visualization
+
+# In[97]:
+
+
+import numpy as np
+
+
+# In[98]:
+
+
+x = np.linspace(0,10,100)
+
+
+# In[99]:
+
+
+x[:10]
+
+
+# In[100]:
+
+
+x
+
+
+# In[101]:
+
+
+# line plot
+fig, ax = plt.subplots()
+ax.plot(x, x*2)
+plt.show();
+
+
+# In[102]:
+
+
+# scatter plot
+fig, ax = plt.subplots()
+ax.scatter(x, np.exp(x))
+plt.show();
+
+
+# In[103]:
+
+
+fig, ax = plt.subplots()
+ax.scatter(x, np.sin(x))
+plt.show();
+
+
+# In[104]:
+
+
+item_prices = { "laptop" : "$650", "desktop" : "$900", "tablet" : "$300"}
+
+
+# In[105]:
+
+
+item_prices
+
+
+# In[106]:
+
+
+# vertical bar plot
+fig,ax = plt.subplots()
+ax.bar(item_prices.keys(), item_prices.values());
+ax.set(title = "ITEM PRICES");
+
+
+# In[ ]:
+
+
+
+
+
+# In[107]:
+
+
+# horizontal bar plot
+fig,ax = plt.subplots()
+ax.barh(list(item_prices.keys()), list(item_prices.values()));
+
+
+# In[108]:
+
+
+#histogram
+fg , ax = plt.subplots()
+ax.hist(np.random.randn(1000));
+
+
+# In[109]:
+
+
+#subplots
+fig, ((ax1,ax2),(ax3,ax4)) = plt.subplots(nrows=2, ncols =2, figsize=(10,5));
+ax1.plot([1,2,3,4],[11,22,33,44]);
+ax2.scatter(np.random.random(10), np.random.random(10));
+ax3.barh(list(item_prices.keys()), list(item_prices.values()));
+ax4.hist(np.random.randn(1000));
+
+
+# ## Plotting data directory with pandas
+
+# In[112]:
+
+
+import pandas as pd
+car_sales = pd.read_csv("car-sales.csv")
+car_sales
+
+
+# In[115]:
+
+
+car_sales["Price"] = car_sales["Price"].str.replace(r'[\$\,]', '', regex=True).astype(float)
+car_sales
+
+
+# In[116]:
+
+
+car_sales["Price"]
+
+
+# In[118]:
+
+
+# Add a date column
+car_sales["Sale Date"] = pd.date_range("1/1/2026", periods=len(car_sales))
+car_sales
+
+
+# In[119]:
+
+
+car_sales["Total Sales"] = car_sales["Price"].cumsum()
+car_sales
+
+
+# In[120]:
+
+
+car_sales.plot(x='Sale Date', y='Total Sales');
+
+
+# In[121]:
+
+
+car_sales.plot(x="Odometer (KM)", y="Price", kind='scatter');
+
+
+# In[122]:
+
+
+x = np.random.rand(10,4)
+x
+
+
+# In[123]:
+
+
+df = pd.DataFrame(x, columns = ["a","b","c","d"])
+df.plot.bar();
+
+
+# In[124]:
+
+
+car_sales.plot(x='Make', y='Odometer (KM)', kind='bar');
+
+
+# In[125]:
+
+
+car_sales["Odometer (KM)"].plot.hist();
+
+
+# In[127]:
+
+
+car_sales["Odometer (KM)"].plot(kind="hist");
+
+
+# In[128]:
+
+
+car_sales["Price"].plot.hist(bins=20);
+
+
+# In[ ]:
+
+
+
+
+
+=================================================================
+
+
+# Plotting with pyplot method vs oss method
+
+-- always recommended to use OO method
+
+##pyplot method
+ageover_50.plot(kind='scatter', 
+             x='age', 
+             y='chol', 
+             c='target', 
+             figsize=(10, 6));
+
+## oo method
+fig, ax = plt.subplots(figsize=(10, 6))
+ageover_50.plot(kind='scatter', 
+             x="age", 
+             y="chol", 
+             c='target', 
+             ax=ax);
+ax.set_xlim([45, 100]);
+
+## proper oo method
+
+# Create the plot
+fig, ax = plt.subplots(figsize=(10, 6))
+
+# Plot the data
+scatter = ax.scatter(ageover_50["age"], 
+                     ageover_50["chol"], 
+                     c=ageover_50["target"])
+
+# Customize the plot
+ax.set(title="Heart Disease and Cholesterol Levels",
+       xlabel="Age",
+       ylabel="Cholesterol");
+ax.legend(*scatter.legend_elements(), title="Target");
+# Add a meanline
+ax.axhline(ageover_50["chol"].mean(),
+           linestyle="--");
+		   
+====================================
+
+## adding subplots
+
+
+=====================================
+
+## adding subplots
+
+# read the data
+
+heart_disease = pd.read_csv("heart-disease.csv")
+over_50 = heart_disease[heart_disease["age"] > 50]
+over_50
+
+# creating subplots using OO method
+
+fig, (ax0, ax1) = plt.subplots(figsize = (10,8),
+                               nrows = 2,
+                               ncols = 1,
+                               sharex = True);
+# filling the subplots with data
+
+scatter = ax0.scatter(over_50["age"], over_50["chol"], c = over_50["target"])
+
+# Customize the plot
+ax0.set(title="Heart Disease and Cholesterol Levels",
+       xlabel="Age",
+       ylabel="Cholesterol");
+ax0.legend(*scatter.legend_elements(), title="Target");
+
+# Add a meanline
+ax0.axhline(over_50["chol"].mean(), linestyle="--");
+
+scatter = ax1.scatter(over_50["age"], over_50["thalach"], c = over_50["target"])
+
+# Customize the plot
+ax1.set(title="Heart Disease and Max Heart Rate Levels",
+       xlabel="Age",
+       ylabel="Max Heart Rate");
+ax1.legend(*scatter.legend_elements(), title="Target");
+
+# Add a meanline
+ax1.axhline(over_50["thalach"].mean(), linestyle="--");
+
+
+# Title the figure
+fig.suptitle('Heart Disease Analysis', fontsize=16, fontweight='bold');
+
+===============================================================
+
+## using different styles
+
+# Change the style... 
+plt.style.use('seaborn-v0_8-whitegrid')
+
+
+## changing color using cmap
+
+# Change cmap and horizontal line to be a different colour
+plt.style.use('seaborn-v0_8-whitegrid')
+fig, ax = plt.subplots(figsize=(10, 6))
+scatter = ax.scatter(over_50["age"], 
+                     over_50["chol"], 
+                     c=over_50["target"], 
+                     cmap="winter")
+ax.set(title="Heart Disease and Cholesterol Levels",
+       xlabel="Age",
+       ylabel="Cholesterol")
+ax.axhline(y=over_50["chol"].mean(), 
+           color='r', 
+           linestyle='--', 
+           label="Average");
+ax.legend(*scatter.legend_elements(), title="Target");
+
+
+
+## adding limits for x and y
+
+## After adding in different x & y limitations
+
+fig, (ax0, ax1) = plt.subplots(nrows=2, ncols=1, sharex=True, figsize=(10, 10))
+scatter = ax0.scatter(over_50["age"], 
+                      over_50["chol"], 
+                      c=over_50["target"],
+                      cmap='winter')
+ax0.set(title="Heart Disease and Cholesterol Levels",
+        ylabel="Cholesterol")
+
+# Set the x axis
+ax0.set_xlim([50, 80])
+
+# Setup a mean line
+ax0.axhline(y=over_50["chol"].mean(), 
+            color='r', 
+            linestyle='--', 
+            label="Average");
+ax0.legend(*scatter.legend_elements(), title="Target")
+
+# Axis 1, 1 (row 1, column 1)
+scatter = ax1.scatter(over_50["age"], 
+                      over_50["thalach"], 
+                      c=over_50["target"],
+                      cmap='winter')
+ax1.set(title="Heart Disease and Max Heart Rate Levels",
+        xlabel="Age",
+        ylabel="Max Heart Rate")
+
+# Set the y axis
+ax1.set_ylim([60, 200])
+
+# Setup a mean line
+ax1.axhline(y=over_50["thalach"].mean(), 
+            color='r', 
+            linestyle='--', 
+            label="Average");
+ax1.legend(*scatter.legend_elements(), title="Target")
+
+# Title the figure
+fig.suptitle('Heart Disease Analysis', fontsize=16, fontweight='bold');
+
+
+https://github.com/mrdbourke/zero-to-mastery-ml/blob/master/section-2-data-science-and-ml-tools/matplotlib-exercises.ipynb
+
+https://github.com/mrdbourke/zero-to-mastery-ml/blob/master/section-2-data-science-and-ml-tools/matplotlib-exercises-solutions.ipynb
+
+
+
+## BUILDING MODELS
+
+## SCIKIT_LEARN
+
+https://scikit-learn.org/stable/user_guide.html
+https://github.com/mrdbourke/zero-to-mastery-ml/blob/master/section-2-data-science-and-ml-tools/introduction-to-scikit-learn-video.ipynb
+https://github.com/mrdbourke/zero-to-mastery-ml/blob/master/section-2-data-science-and-ml-tools/introduction-to-scikit-learn.ipynb
+
+-- python mahcine learning lib to build models
+-- built on numpy and matplotlib
+-- built in models
+-- evaluation of models
+
+scikit learn workflow
+
+1. get the data ready
+2. choose a model
+3. fit the data into the model (learing patterns)
+4. make prediction (using patterns)
+5. evaluate the model 
+6. experiment to improve accuracy
+7. save the trained model for future use 
+
+https://github.com/mrdbourke/zero-to-mastery-ml/blob/master/section-2-data-science-and-ml-tools/scikit-learn-workflow-example.ipynb
+
+
+cheatsheet
+
+https://github.com/mrdbourke/zero-to-mastery-ml/blob/master/section-2-data-science-and-ml-tools/scikit-learn-what-were-covering.ipynb
+
+
+=======================================================
+# 0. standard imports
+%matplotlib inline
+import matplotlib.pyplot as plt
+import pandas as pd
+import numpy as np
+
+## 1. get the data ready
+
+
+# get dataset and view dataset
+heart_disease = pd.read_csv("heart-disease.csv")
+heart_disease.head()
+
+# create X (features) and y (target)
+
+X = heart_disease.drop("target", axis = 1)
+y = heart_disease["target"]
+X.head(),y.head()
+
+# split the data into train and test set
+
+from sklearn.model_selection import train_test_split
+X_train, X_test, y_train, y_test = train_test_split(X,y)
+
+X_train.shape, X_test.shape, y_train.shape, y_test.shape
+
+## 2. Choose a model
+
+# choosing an esimator from sk-learn
+# random forest classifier is used for classification type of ML problems
+
+from sklearn.ensemble import RandomForestClassifier
+model = RandomForestClassifier()
+
+## 3. Fit the data into the model
+
+model.fit(X_train, y_train)
+
+## 4. Make prediction
+
+y_preds = model.predict(X_test)
+y_preds
+
+#single sample. index can change on each run
+#X_test.loc[247]
+#heart_disease.loc[247]
+
+# Make a prediction on a single sample (has to be array)
+#model.predict(np.array(X_test.loc[247]).reshape(1, -1))
+
+## 5. evaulate the model
+
+# on training set
+model.score(X_train, y_train)
+
+# on test set (unseen data)
+
+model.score(X_test, y_test)
+
+## 6. check if you can improve
+
+# Try different numbers of estimators (n_estimators is a hyperparameter you can change)
+np.random.seed(42)
+for i in range(10, 100, 10):
+    print(f"Trying model with {i} estimators...")
+    model = RandomForestClassifier(n_estimators=i).fit(X_train, y_train)
+    print(f"Model accruacy on test set: {model.score(X_test, y_test)}")
+    print("")
+
+## 7. save model  and load for future use
+
+import pickle
+
+# Save trained model to file
+pickle.dump(model, open("random_forest_model_1.pkl", "wb"))
+
+# Load a saved model and make a prediction on a single example
+loaded_model = pickle.load(open("random_forest_model_1.pkl", "rb"))
+
+=========================================================
+
+# Cleaning, transforming and reducing data to get useful data
+
+# debugging warnings in jupyter
+
+# updating packages in conda env
+
+
+# GETTING YOUR DATA READY
+
+Main Steps:
+
+1. Split the data into features(X) and labels(y) 
+2. Filling(Imputing) - disregard missing values
+3. Convert non numerical into numerical  (feature encoding) -- transformation
+
+-- reducing data is important to save compute power
+
+# converting from non numerical to numerical
+
+===================================================
+# turn data from non numerical into numerical
+# 1. Import OneHotEncoder and ColumnTransformer
+from sklearn.preprocessing import OneHotEncoder
+from sklearn.compose import ColumnTransformer
+
+# 2. Define the categorical features to transform
+categorical_features = ["Make", "Colour", "Doors"]
+
+# 3. Create an instance of OneHotEncoder
+one_hot = OneHotEncoder()
+
+# 4. Create an instance of ColumnTransformer
+transformer = ColumnTransformer([("one_hot", # name
+                                  one_hot, # transformer
+                                  categorical_features)], # columns to transform
+                                  remainder="passthrough") # what to do with the rest of the columns? ("passthrough" = leave unchanged) 
+
+# 5. Turn the categorical features into numbers (this will return an array-like sparse matrix, not a DataFrame)
+transformed_X = transformer.fit_transform(X)
+transformed_X
+=======================================================
+
+# using pandas to convert
+
+
+==================================================================
+# One-hot encode categorical variables
+categorical_variables = ["Make", "Colour", "Doors"]
+dummies = pd.get_dummies(data=car_sales[categorical_variables])
+dummies
+
+# Have to convert doors to object for dummies to work on it...
+car_sales["Doors"] = car_sales["Doors"].astype(object)
+dummies = pd.get_dummies(data=car_sales[["Make", "Colour", "Doors"]],
+                         dtype=float)
+dummies
+================================================================
+
+
+Should you use Scikit-Learn or pandas for turning data into numerical form?
+
+And the answer is either.
+
+But as a rule of thumb:
+
+If you're performing quick data analysis and running small modelling experiments, use pandas as it's generally quite fast to get up and running.
+If you're performing a larger scale modelling experiment or would like to put your data processing steps into a production pipeline, I'd recommend leaning towards Scikit-Learn, specifically a Scikit-Learn Pipeline (chaining together multiple estimator/modelling steps).
+
+# RandomForestRegressor is used when predicting a number in classification
+
+# handling missing values
+
+1. fill them with some value (imputing)
+2. remove samples with missing data
+
+Extension: Feature Scaling
+Once your data is all in numerical format, there's one more transformation you'll probably want to do to it.
+
+It's called Feature Scaling.
+
+In other words, making sure all of your numerical data is on the same scale.
+
+For example, say you were trying to predict the sale price of cars and the number of kilometres on their odometers varies from 6,000 to 345,000 but the median previous repair cost varies from 100 to 1,700. A machine learning algorithm may have trouble finding patterns in these wide-ranging variables.
+
+To fix this, there are two main types of feature scaling.
+
+Normalization (also called min-max scaling) - This rescales all the numerical values to between 0 and 1, with the lowest value being close to 0 and the highest previous value being close to 1. Scikit-Learn provides functionality for this in the MinMaxScalar class.
+
+Standardization - This subtracts the mean value from all of the features (so the resulting features have 0 mean). It then scales the features to unit variance (by dividing the feature by the standard deviation). Scikit-Learn provides functionality for this in the StandardScalar class.
+
+A couple of things to note.
+
+Feature scaling usually isn't required for your target variable.
+
+Feature scaling is usually not required with tree-based models (e.g. Random Forest) since they can handle varying features.
+
+Extra reading
+
+For further information on this topic, I'd suggest the following resources.
+
+Feature Scaling - why is it required? by Rahul Saini
+https://rahul-saini.medium.com/feature-scaling-why-it-is-required-8a93df1af310
+
+Feature Scaling with Scikit-Learn by Ben Alex Keen
+https://benalexkeen.com/feature-scaling-with-scikit-learn/
+
+Feature Scaling for Machine Learning: Understanding the Difference Between Normalization vs. Standardization by Aniruddha Bhandari
+https://www.analyticsvidhya.com/blog/2020/04/feature-scaling-machine-learning-normalization-standardization/
+
+Challenge
+
+After reading up on feature scaling, a good idea would be to practice it on one of the problems you're working on and see how it affects the results. If you find anything interesting, be sure to share it.
+
+Thank you to Sid and Shubhamai for suggesting resources. If you have anything you think should be added, please let us know.
+
+The main takeaways:
+
+Split your data first (into train/test), always keep your training & test data separate
+
+Fill/transform the training set and test sets separately (this goes for filling data with pandas as well)
+
+Don't use data from the future (test set) to fill data from the past (training set)
+
+
+# Filling missing values using pandas
+====================================================================================
+car_sales_missing["Make"] = car_sales_missing["Make"].fillna(value="missing")
+car_sales_missing["Colour"] = car_sales_missing["Colour"].fillna(value="missing")
+
+# Fill the Doors column with the most common value
+car_sales_missing["Doors"] = car_sales_missing["Doors"].fillna(value=4)
+
+# Fill the Odometer (KM) column
+# Old: car_sales_missing["Odometer (KM)"].fillna(value=car_sales_missing["Odometer (KM)"].mean(), inplace=True)
+
+car_sales_missing["Odometer (KM)"] = car_sales_missing["Odometer (KM)"].fillna(value=car_sales_missing["Odometer (KM)"].mean())
+=====================================================================================
+
+
+
+
+
+=======================================================================
+#!/usr/bin/env python
+# coding: utf-8
+
+# ## Getting Data Ready
+# ## 1. splitting into features and labels
+
+# In[1]:
+
+
+#standard imports
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+get_ipython().run_line_magic('matplotlib', 'inline')
+
+
+# In[3]:
+
+
+# get the dataset
+heart_disease = pd.read_csv("heart-disease.csv")
+heart_disease.head()
+
+
+# In[5]:
+
+
+# from the data set, split the data into features and labels
+
+# features
+X = heart_disease.drop("target", axis =1)
+X.head()
+
+
+# In[6]:
+
+
+# labels
+y = heart_disease["target"]
+y.head()
+
+
+# In[10]:
+
+
+# Splitting into train and test set
+
+from sklearn.model_selection import train_test_split
+X_train, X_test, y_train, y_test = train_test_split(X, y)
+#X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
+X_train.shape, X_test.shape, y_train.shape, y_test.shape
+
+
+# ## 2. Convert data into numerical
+
+# In[11]:
+
+
+# importing car sales dataset which has some non numerical data
+
+car_sales = pd.read_csv("scikit-learn-data/car-sales-extended.csv")
+car_sales.head()
+
+
+# In[12]:
+
+
+len(car_sales)
+
+
+# In[13]:
+
+
+car_sales.dtypes
+
+
+# In[14]:
+
+
+# split the data into features and labels
+
+X = car_sales.drop("Price", axis = 1)
+y = car_sales["Price"]
+
+
+# In[15]:
+
+
+X.head()
+
+
+# In[16]:
+
+
+y.head()
+
+
+# In[20]:
+
+
+# Split into train and test set
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.2)
+
+
+# In[21]:
+
+
+# turn data from non numerical into numerical
+# 1. Import OneHotEncoder and ColumnTransformer
+from sklearn.preprocessing import OneHotEncoder
+from sklearn.compose import ColumnTransformer
+
+# 2. Define the categorical features to transform
+categorical_features = ["Make", "Colour", "Doors"]
+
+# 3. Create an instance of OneHotEncoder
+one_hot = OneHotEncoder()
+
+# 4. Create an instance of ColumnTransformer
+transformer = ColumnTransformer([("one_hot", # name
+                                  one_hot, # transformer
+                                  categorical_features)], # columns to transform
+                                  remainder="passthrough") # what to do with the rest of the columns? ("passthrough" = leave unchanged) 
+
+# 5. Turn the categorical features into numbers (this will return an array-like sparse matrix, not a DataFrame)
+transformed_X = transformer.fit_transform(X)
+transformed_X
+
+
+# In[23]:
+
+
+# fit the model with transformed data
+from sklearn.ensemble import RandomForestRegressor
+np.random.seed(42)
+
+# Create train and test splits with transformed_X
+X_train, X_test, y_train, y_test = train_test_split(transformed_X,
+                                                    y,
+                                                    test_size=0.2)
+
+# Create the model instance
+model = RandomForestRegressor()
+
+# Fit the model on the numerical data (this errored before since our data wasn't fully numeric)
+model.fit(X_train, y_train)
+
+# Score the model (returns r^2 metric by default, also called coefficient of determination, higher is better)
+model.score(X_test, y_test)
+
+
+# ## 3. Fill Missing Values using Pandas or scikit-learn
+
+# In[27]:
+
+
+# import dataset with missing values
+car_sales_missing = pd.read_csv("scikit-learn-data/car-sales-extended-missing-data.csv")
+car_sales_missing.head(10)
+
+
+# In[28]:
+
+
+# Get the sum of all missing values
+car_sales_missing.isna().sum()
+
+
+# In[29]:
+
+
+# Fill the missing values in the Make and colour column
+# Note: In previous versions of pandas, inplace=True was possible, however this will be changed in a future version, can use reassignment instead.
+# car_sales_missing["Make"].fillna(value="missing", inplace=True)
+
+car_sales_missing["Make"] = car_sales_missing["Make"].fillna(value="missing")
+car_sales_missing["Colour"] = car_sales_missing["Colour"].fillna(value="missing")
+
+# Fill the Doors column with the most common value
+car_sales_missing["Doors"] = car_sales_missing["Doors"].fillna(value=4)
+
+# Fill the Odometer (KM) column
+# Old: car_sales_missing["Odometer (KM)"].fillna(value=car_sales_missing["Odometer (KM)"].mean(), inplace=True)
+
+car_sales_missing["Odometer (KM)"] = car_sales_missing["Odometer (KM)"].fillna(value=car_sales_missing["Odometer (KM)"].mean())
+
+
+# In[30]:
+
+
+# Check the number of missing values
+car_sales_missing.isna().sum()
+
+
+# In[31]:
+
+
+# Remove rows with missing Price labels
+car_sales_missing.dropna(inplace=True)
+
+
+# In[32]:
+
+
+car_sales_missing.isna().sum()
+
+
+# In[34]:
+
+
+# Check the number of total samples (previously was 1000)
+len(car_sales_missing)
+
+
+# In[35]:
+
+
+# Create features
+X_missing = car_sales_missing.drop("Price", axis=1)
+print(f"Number of missing X values:\n{X_missing.isna().sum()}")
+
+# Create labels
+y_missing = car_sales_missing["Price"]
+print(f"Number of missing y values: {y_missing.isna().sum()}")
+
+
+# In[40]:
+
+
+# Let's convert the categorical columns to one hot encoded 
+# Turn the categories (Make and Colour) into numbers
+from sklearn.preprocessing import OneHotEncoder
+from sklearn.compose import ColumnTransformer
+
+categorical_features = ["Make", "Colour", "Doors"]
+
+one_hot = OneHotEncoder()
+
+transformer = ColumnTransformer([("one_hot", 
+                                  one_hot, 
+                                  categorical_features)],
+                                remainder="passthrough",
+                                sparse_threshold=0) # return a sparse matrix or not
+
+transformed_X_missing = transformer.fit_transform(X_missing)
+transformed_X_missing
+
+
+# In[41]:
+
+
+# Split data into training and test sets
+np.random.seed(42)
+X_train, X_test, y_train, y_test = train_test_split(transformed_X_missing,
+                                                    y_missing,
+                                                    test_size=0.2)
+
+# Fit and score a model
+model = RandomForestRegressor()
+model.fit(X_train, y_train)
+model.score(X_test, y_test)
+
+
+# ## Filling missing values with scikit-learn
+
+# In[42]:
+
+
+# import the dataset with missing values
+
+car_sales_missing = pd.read_csv("scikit-learn-data/car-sales-extended-missing-data.csv")
+car_sales_missing.head(10)
+
+
+# In[43]:
+
+
+#check number of missing values
+car_sales_missing.isna().sum()
+
+
+# In[46]:
+
+
+#drop missing values from Price which will be used as target
+car_sales_missing.dropna(subset=["Price"], inplace = True)
+
+
+# In[47]:
+
+
+car_sales_missing.isna().sum()
+
+
+# In[48]:
+
+
+# split the data into features and labels
+
+X = car_sales_missing.drop("Price", axis=1)
+y = car_sales_missing["Price"]
+
+
+# In[49]:
+
+
+X.head()
+
+
+# In[50]:
+
+
+y.head()
+
+
+# In[54]:
+
+
+# split the data into training and test set
+
+X_train, X_test, y_train, y_test = train_test_split(X,y)
+X_train.shape, X_test.shape
+
+
+# In[56]:
+
+
+# fill missing values using SimpleImputer
+from sklearn.impute import SimpleImputer
+
+# create categorical imputer
+cat_imputer = SimpleImputer(strategy = "constant", fill_value = "missing")
+
+# create door imputer
+door_imputer = SimpleImputer(strategy = "constant" , fill_value = 4)
+
+# create numeric imputer
+num_imputer = SimpleImputer(strategy = "mean")
+
+
+# In[57]:
+
+
+# create features
+cat_features = ["Make", "Colour"]
+door_feature = ["Doors"]
+num_features = ["Odometer (KM)"]
+
+
+# In[59]:
+
+
+# transform the data
+
+from sklearn.compose import ColumnTransformer
+
+# Create series of column transforms to perform
+imputer = ColumnTransformer([
+    ("cat_imputer", cat_imputer, cat_features),
+    ("door_imputer", door_imputer, door_feature),
+    ("num_imputer", num_imputer, num_features)])
+
+
+# In[60]:
+
+
+# Find values to fill and transform training data
+filled_X_train = imputer.fit_transform(X_train)
+
+# Fill values in to the test set with values learned from the training set
+filled_X_test = imputer.transform(X_test)
+
+# Check filled X_train
+filled_X_train
+
+
+# In[61]:
+
+
+# Get our transformed data array's back into DataFrame's
+filled_X_train_df = pd.DataFrame(filled_X_train, 
+                                 columns=["Make", "Colour", "Doors", "Odometer (KM)"])
+
+filled_X_test_df = pd.DataFrame(filled_X_test, 
+                                columns=["Make", "Colour", "Doors", "Odometer (KM)"])
+
+# Check missing data in training set
+filled_X_train_df.isna().sum()
+
+
+# In[62]:
+
+
+# Now let's one hot encode the features with the same code as before 
+from sklearn.preprocessing import OneHotEncoder
+from sklearn.compose import ColumnTransformer
+
+categorical_features = ["Make", "Colour", "Doors"]
+
+one_hot = OneHotEncoder()
+
+transformer = ColumnTransformer([("one_hot", 
+                                  one_hot, 
+                                  categorical_features)],
+                                remainder="passthrough",
+                                sparse_threshold=0) # return a sparse matrix or not
+
+# Fill train and test values separately
+transformed_X_train = transformer.fit_transform(filled_X_train_df)
+transformed_X_test = transformer.transform(filled_X_test_df)
+
+# Check transformed and filled X_train
+transformed_X_train
+
+
+# In[63]:
+
+
+# Now we've transformed X, let's see if we can fit a model
+np.random.seed(42)
+from sklearn.ensemble import RandomForestRegressor
+
+model = RandomForestRegressor()
+
+# Make sure to use the transformed data (filled and one-hot encoded X data)
+model.fit(transformed_X_train, y_train)
+model.score(transformed_X_test, y_test)
+
+
+# In[ ]:
+==========================================================================================
+
+# CHOOSING CORRECT ESTIMATOR
+
+# choosing the correct estimator
+
+https://scikit-learn.org/stable/machine_learning_map.html
+
+# machine learning algorithm map from scikit-learn
+
+Keep your training and test sets separate.
+Most datasets you come across won't be in a form ready to immediately start using them with machine learning models. And some may take more preparation than others to get ready to use.
+For most machine learning models, your data has to be numerical. This will involve converting whatever you're working with into numbers. This process is often referred to as feature engineering or feature encoding.
+Some machine learning models aren't compatible with missing data. The process of filling missing data is referred to as data imputation.
+
+ColumnTransformer() takes as input a list of tuples in the form (name_of_transform, transformer_to_use, columns_to_transform) specifying which columns to transform and how to transform them.
+
+Some things to note:
+
+Scikit-Learn refers to machine learning models and algorithms as estimators.
+Classification problem - predicting a category (heart disease or not).
+Sometimes you'll see clf (short for classifier) used as a classification estimator instance's variable name.
+Regression problem - predicting a number (selling price of a car).
+Unsupervised problem (data with no labels) - clustering (grouping unlabelled samples with other similar unlabelled samples).
+
+-- Sklearn provides datasets - toy datasets and real datasets for use
+
+https://scikit-learn.org/stable/datasets/real_world.html#california-housing-dataset
+
+-- regression problem:
+
+====================================================
+# Import the RandomForestRegressor model class from the ensemble module
+from sklearn.ensemble import RandomForestRegressor
+
+# Setup random seed
+np.random.seed(42)
+
+# Split the data into features (X) and labels (y)
+X = housing_df.drop("target", axis=1)
+y = housing_df["target"]
+
+# Split into train and test sets
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
+
+# Institate and fit the model (on the training set)
+model = RandomForestRegressor()
+model.fit(X_train, y_train)
+
+# Check the score of the model (on the test set)
+# The default score metirc of regression aglorithms is R^2
+model.score(X_test, y_test)
+=============================================================
+
+# ensemble methods
+
+https://scikit-learn.org/stable/modules/ensemble.html
+
+# random forest
+
+https://williamkoehrsen.medium.com/random-forest-simple-explanation-377895a60d2d
+
+# Decision Trees
+
+## If you have structured data, use ensemble methods
+## if you have unstructured data, use deep learning or transfer learning
+
+# Classification Problem
+
+=========================================================
+heart_disease = pd.read_csv("heart-disease.csv")
+
+# Import LinearSVC from the svm module as suggested in the sklearn map
+from sklearn.svm import LinearSVC
+
+# Setup random seed
+np.random.seed(42)
+
+# Split the data into X (features/data) and y (target/labels)
+X = heart_disease.drop("target", axis=1)
+y = heart_disease["target"]
+
+# Split into train and test sets
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
+
+# Instantiate and fit the model (on the training set)
+clf = LinearSVC(max_iter=1000, # iterations on the data, 1000 is the default
+                dual="auto") # dual="auto" chooses best parameters for the model automatically
+clf.fit(X_train, y_train)
+
+# Check the score of the model (on the test set)
+clf.score(X_test, y_test)
+
+=================================================================
+
+-- using another model for classification
+
+=================================================================
+# Import the RandomForestClassifier model class from the ensemble module
+from sklearn.ensemble import RandomForestClassifier
+
+# Setup random seed
+np.random.seed(42)
+
+# Split the data into X (features/data) and y (target/labels)
+X = heart_disease.drop("target", axis=1)
+y = heart_disease["target"]
+
+# Split into train and test sets
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
+
+# Instantiate and fit the model (on the training set)
+clf = RandomForestClassifier(n_estimators=100) # 100 is the default, but you could try 1000 and see what happens
+clf.fit(X_train, y_train)
+
+# Check the score of the model (on the test set)
+clf.score(X_test, y_test)
+==================================================================
+
+
+## FITTING THE MODEL
+
+In Scikit-Learn, the process of having a machine learning model learn patterns from a dataset involves calling the fit() method and passing it data, such as, fit(X, y).
+
+Where X is a feature array and y is a target array.
+
+Other names for X include:
+
+Data
+Feature variables
+Features
+Other names for y include:
+
+Labels
+Target variable
+For supervised learning there is usually an X and y.
+
+For unsupervised learning, there's no y (no labels).
+
+
+================================================================
+# Import the RandomForestClassifier model class from the ensemble module
+from sklearn.ensemble import RandomForestClassifier
+
+# Setup random seed
+np.random.seed(42)
+
+# Split the data into X (features/data) and y (target/labels)
+X = heart_disease.drop("target", axis=1)
+y = heart_disease["target"]
+
+# Split into train and test sets
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
+
+# Instantiate the model (on the training set)
+clf = RandomForestClassifier(n_estimators=100)
+
+# Call the fit method on the model and pass it training data
+clf.fit(X_train, y_train)
+
+# Check the score of the model (on the test set)
+clf.score(X_test, y_test)
+========================================================================
+
+-- Calling the fit() method will cause the machine learning algorithm to attempt to find patterns between X and y. Or if there's no y, it'll only find the patterns within X.
+
+Passing X and y to fit() will cause the model to go through all of the examples in X (data) and see what their corresponding y (label) is.
+
+How the model does this is different depending on the model you use.
+
+Explaining the details of each would take an entire textbook.
+
+For now, you could imagine it similar to how you would figure out patterns if you had enough time.
+
+You'd look at the feature variables, X, the age, sex, chol (cholesterol) and see what different values led to the labels, y, 1 for heart disease, 0 for not heart disease.
+
+This concept, regardless of the problem, is similar throughout all of machine learning.
+
+During training (finding patterns in data):
+
+A machine learning algorithm looks at a dataset, finds patterns, tries to use those patterns to predict something and corrects itself as best it can with the available data and labels. It stores these patterns for later use.
+
+During testing or in production (using learned patterns):
+
+A machine learning algorithm uses the patterns its previously learned in a dataset to make a prediction on some unseen data.
+
+## MAKING PREDICTIONS
+
+predict()
+predict_proba()
+
+clf.predict(X_test)
+array([0, 1, 1, 0, 1, 1, 1, 0, 0, 1, 1, 0, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0,
+       1, 1, 1, 1, 1, 1, 0, 1, 0, 0, 0, 0, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1,
+       1, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 0, 0])
+
+Given data in the form of X, the predict() function returns labels in the form of y.
+
+Note: For the predict() function to work, it must be passed X (data) in the same format the model was trained on. For example, if a model was trained on 10 features formatted in a certain way, predictions should be made on data with 10 features fortmatted in a certain way. Anything different and it will return an error.
+
+# Compare predictions to truth
+y_preds = clf.predict(X_test)
+np.mean(y_preds == y_test)
+
+
+# Return probabilities rather than labels
+clf.predict_proba(X_test[:5])
+
+array([[0.89, 0.11],
+       [0.49, 0.51],
+       [0.43, 0.57],
+       [0.84, 0.16],
+       [0.18, 0.82]])
+	   
+	   
+	   
+## EVALUATING A MODEL
+
+https://github.com/mrdbourke/zero-to-mastery-ml/blob/master/section-2-data-science-and-ml-tools/introduction-to-scikit-learn.ipynb
+
+-- there are 3 ways to evaluate scikit-learn estimator
+
+1. using score() method
+2. the scoring parameter
+3. problem specific metric functions
+
+The score() method. Calling score() on a model instance will return a metric associated with the type of model you're using. The metric depends on which model you're using.
+The scoring parameter. This parameter can be passed to methods such as cross_val_score() or GridSearchCV() to tell Scikit-Learn to use a specific type of scoring metric.
+Problem-specific metric functions available in sklearn.metrics. Similar to how the scoring parameter can be passed different scoring functions, Scikit-Learn implements these as stand alone functions.
+
+-- default score method for classifier is mean accuracy
+
+-- default score method for regression is r squared (coeff of determination)
+
+Once you've trained a model, you'll want a way to measure how trustworthy its predictions are.
+
+Across the board, the main idea of evaluating a model is to compare the model's predictions to what they should've ideally been (the truth labels).
+
+Scikit-Learn implements 3 different methods of evaluating models.
+
+The score() method. Calling score() on a model instance will return a metric assosciated with the type of model you're using. The metric depends on which model you're using.
+The scoring parameter. This parameter can be passed to methods such as cross_val_score() or GridSearchCV() to tell Scikit-Learn to use a specific type of scoring metric.
+Problem-specific metric functions available in sklearn.metrics. Similar to how the scoring parameter can be passed different scoring functions, Scikit-Learn implements these as stand alone functions.
+The scoring function you use will also depend on the problem you're working on.
+
+Classification problems have different evaluation metrics and scoring functions to regression problems.
+
+# Using scoring parameter
+
+#cross_val_score
+
+-- creating more than 1 train test split like 5 splits and take avg
+
+# Using cross_val_score()
+cross_val_score(clf, X, y, cv=5) # cv = number of splits to test (5 by default)
+
+array([0.81967213, 0.86885246, 0.81967213, 0.78333333, 0.76666667])
+
+What's happening here?
+
+The first difference you might notice is cross_val_score() returns an array where as score() only returns a single number.
+
+cross_val_score() returns an array because of a parameter called cv, which stands for cross-validation.
+
+When cv isn't set, cross_val_score() will return an array of 5 numbers by default (cv=None is the same as setting cv=5).
+
+Remember, you can see the parameters of a function using SHIFT + TAB (inside a Jupyter Notebook) from within the brackets.
+
+# Classification model evaluation metrics
+
+1. Accuracy
+2. Area under ROC curve
+3. confusion matrix
+4. classification report
+
+https://scikit-learn.org/stable/modules/model_evaluation.html#classification-metrics
+
+# Accuracy
+Accuracy is the default metric for the score() function within each of Scikit-Learn's classifier models. And it's probably the metric you'll see most often used for classification problems.
+
+=======================================================
+# Import cross_val_score from the model_selection module
+from sklearn.model_selection import cross_val_score
+from sklearn.ensemble import RandomForestClassifier
+
+np.random.seed(42)
+
+X = heart_disease.drop("target", axis=1)
+y = heart_disease["target"]
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
+
+clf = RandomForestClassifier()
+clf.fit(X_train, y_train)
+clf.score(X_test, y_test)
+# Accuracy as percentage
+print(f"Heart Disease Classifier Accuracy: {clf.score(X_test, y_test) * 100:.2f}%")
+cross_val_score = cross_val_score(clf, X, y, cv=5)
+print(f"Heart Disease Classifier Cross-Validated Accuracy: {np.mean(cross_val_score) *100:.2f}%")
+
+Heart Disease Classifier Accuracy: 85.25%
+Heart Disease Classifier Cross-Validated Accuracy: 81.16%
+
+
+np.random.seed(42)
+cv_recall = cross_val_score(clf, X, y, cv=5, scoring="recall")
+print(f"The cross-validated recall is: {np.mean(cv_recall):.2f}")
+
+The cross-validated recall is: 0.85
+
+==============================================================
+
+# ROC curve
+
+ROC curves are a comparison of true postive rate (tpr) versus false positive rate (fpr).
+
+For clarity:
+
+True positive = model predicts 1 when truth is 1
+False positive = model predicts 1 when truth is 0
+True negative = model predicts 0 when truth is 0
+False negative = model predicts 0 when truth is 1
+
+-- fpr - false positive rate
+-- tpr - true positive rate
+
+ROC curves and AUC metrics are evaluation metrics for binary classification models (a model which predicts one thing or another, such as heart disease or not).
+
+The ROC curve compares the true positive rate (tpr) versus the false positive rate (fpr) at different classification thresholds.
+
+============================================================================
+## ROC Curve
+from sklearn.metrics import roc_curve
+
+# Make predictions with probabilities
+y_probs = clf.predict_proba(X_test)
+
+# Keep the probabilites of the positive class only
+y_probs = y_probs[:, 1]
+
+# Calculate fpr, tpr and thresholds
+fpr, tpr, thresholds = roc_curve(y_test, y_probs)
+
+# Check the false positive rate
+fpr
+
+# Create a function for plotting ROC curves
+import matplotlib.pyplot as plt
+
+def plot_roc_curve(fpr, tpr):
+    """
+    Plots a ROC curve given the false positive rate (fpr)
+    and true positive rate (tpr) of a model.
+    """
+    # Plot roc curve
+    plt.plot(fpr, tpr, color="orange", label="ROC")
+    # Plot line with no predictive power (baseline)
+    plt.plot([0, 1], [0, 1], color="darkblue", linestyle="--", label="Guessing")
+    
+    # Customize the plot
+    plt.xlabel("False positive rate (fpr)")
+    plt.ylabel("True positive rate (tpr)")
+    plt.title("Receiver Operating Characteristic (ROC) Curve")
+    plt.legend()
+    plt.show()
+
+plot_roc_curve(fpr, tpr)
+===================================================================================
+
+from sklearn.metrics import RocCurveDisplay
+roc_curve_display = RocCurveDisplay.from_estimator(estimator=clf, 
+                                                   X=X_test, 
+                                                   y=y_test)
+===================================================================================												   
+												   
+
+The AUC metric tells you how well your model is at choosing between classes (for example, how well it is at deciding whether someone has heart disease or not). A perfect model will get an AUC score of 1.
+
+
+=============================================
+from sklearn.metrics import roc_auc_score
+
+roc_auc_score_value = roc_auc_score(y_test, y_probs)
+roc_auc_score_value
+
+0.9304956896551724
+============================================
+
+https://www.youtube.com/watch?v=4jRBRDbJemM
+https://developers.google.com/machine-learning/crash-course/classification/roc-and-auc
+
+# confusion matrix
+
+https://en.wikipedia.org/wiki/Confusion_matrix
+
+A confusion matrix is a quick way to compare the labels a model predicts and the actual labels it was supposed to predict.
+
+In essence, giving you an idea of where the model is getting confused.
+
+
+========================================================================
+## CONFUSION MATRIX
+
+from sklearn.metrics import confusion_matrix
+
+y_preds = clf.predict(X_test)
+
+confusion_matrix(y_test, y_preds)
+
+array([[24,  5],
+       [ 4, 28]])
+	   
+# Plot confusion matrix from predictions
+from sklearn.metrics import ConfusionMatrixDisplay
+ConfusionMatrixDisplay.from_predictions(y_true=y_test, 
+                                        y_pred=y_preds);
+	   
+=======================================================================
+
+# classification report
+
+https://scikit-learn.org/stable/modules/generated/sklearn.metrics.classification_report.html
+
+A classification report is more so a collection of metrics rather than a single one.
+
+-- recall
+-- precision
+-- f1 score
+
+It returns four columns: precision, recall, f1-score and support.
+
+The number of rows will depend on how many different classes there are. But there will always be three rows labell accuracy, macro avg and weighted avg.
+
+Each term measures something slightly different:
+
+Precision - Indicates the proportion of positive identifications (model predicted class 1) which were actually correct. A model which produces no false positives has a precision of 1.0.
+Recall - Indicates the proportion of actual positives which were correctly classified. A model which produces no false negatives has a recall of 1.0.
+F1 score - A combination of precision and recall. A perfect model achieves an F1 score of 1.0.
+Support - The number of samples each metric was calculated on.
+Accuracy - The accuracy of the model in decimal form. Perfect accuracy is equal to 1.0, in other words, getting the prediction right 100% of the time.
+Macro avg - Short for macro average, the average precision, recall and F1 score between classes. Macro avg doesn't take class imbalance into effect. So if you do have class imbalances (more examples of one class than another), you should pay attention to this.
+Weighted avg - Short for weighted average, the weighted average precision, recall and F1 score between classes. Weighted means each metric is calculated with respect to how many samples there are in each class. This metric will favour the majority class (e.g. it will give a high value when one class out performs another due to having more samples).
+
+When should you use each?
+
+It can be tempting to base your classification models perfomance only on accuracy. And accuracy is a good metric to report, except when you have very imbalanced classes.
+
+For example, let's say there were 10,000 people. And 1 of them had a disease. You're asked to build a model to predict who has it.
+
+You build the model and find your model to be 99.99% accurate. Which sounds great! ...until you realise, all its doing is predicting no one has the disease, in other words all 10,000 predictions are false.
+
+In this case, you'd want to turn to metrics such as precision, recall and F1 score.
+
+To summarize:
+
+Accuracy is a good measure to start with if all classes are balanced (e.g. same amount of samples which are labelled with 0 or 1)
+Precision and recall become more important when classes are imbalanced.
+If false positive predictions are worse than false negatives, aim for higher precision.
+If false negative predictions are worse than false positives, aim for higher recall.
+================================================================
+## CLASSIFICATION REPORT
+from sklearn.metrics import classification_report
+
+print(classification_report(y_test, y_preds))
+================================================================
+
+
+
+## REGRESSION MODEL EVALUATION METRICS
+
+https://scikit-learn.org/stable/modules/model_evaluation.html#regression-metrics
+-- r squared
+-- MAE (mean absolute error)
+-- MSE (mean squaed error)
+
+
+=========================================================
+Machine Learning Model Evaluation
+Evaluating the results of a machine learning model is as important as building one.
+
+But just like how different problems have different machine learning models, different machine learning models have different evaluation metrics.
+
+Below are some of the most important evaluation metrics you'll want to look into for classification and regression models.
+
+Classification Model Evaluation Metrics/Techniques
+
+Accuracy - The accuracy of the model in decimal form. Perfect accuracy is equal to 1.0.
+
+Precision - Indicates the proportion of positive identifications (model predicted class 1) which were actually correct. A model which produces no false positives has a precision of 1.0.
+
+Recall - Indicates the proportion of actual positives which were correctly classified. A model which produces no false negatives has a recall of 1.0.
+
+F1 score - A combination of precision and recall. A perfect model achieves an F1 score of 1.0.
+
+Confusion matrix - Compares the predicted values with the true values in a tabular way, if 100% correct, all values in the matrix will be top left to bottom right (diagonal line).
+
+Cross-validation - Splits your dataset into multiple parts and train and tests your model on each part then evaluates performance as an average.
+
+Classification report - Sklearn has a built-in function called classification_report() which returns some of the main classification metrics such as precision, recall and f1-score.
+
+ROC Curve - Also known as receiver operating characteristic is a plot of true positive rate versus false-positive rate.
+
+Area Under Curve (AUC) Score - The area underneath the ROC curve. A perfect model achieves an AUC score of 1.0.
+
+Which classification metric should you use?
+
+Accuracy is a good measure to start with if all classes are balanced (e.g. same amount of samples which are labelled with 0 or 1).
+
+Precision and recall become more important when classes are imbalanced.
+
+If false-positive predictions are worse than false-negatives, aim for higher precision.
+
+If false-negative predictions are worse than false-positives, aim for higher recall.
+
+F1-score is a combination of precision and recall.
+
+A confusion matrix is always a good way to visualize how a classification model is going.
+
+Regression Model Evaluation Metrics/Techniques
+
+R^2 (pronounced r-squared) or the coefficient of determination - Compares your model's predictions to the mean of the targets. Values can range from negative infinity (a very poor model) to 1. For example, if all your model does is predict the mean of the targets, its R^2 value would be 0. And if your model perfectly predicts a range of numbers it's R^2 value would be 1.
+
+Mean absolute error (MAE) - The average of the absolute differences between predictions and actual values. It gives you an idea of how wrong your predictions were.
+
+Mean squared error (MSE) - The average squared differences between predictions and actual values. Squaring the errors removes negative errors. It also amplifies outliers (samples which have larger errors).
+
+Which regression metric should you use?
+
+R2 is similar to accuracy. It gives you a quick indication of how well your model might be doing. Generally, the closer your R2 value is to 1.0, the better the model. But it doesn't really tell exactly how wrong your model is in terms of how far off each prediction is.
+
+MAE gives a better indication of how far off each of your model's predictions are on average.
+
+As for MAE or MSE, because of the way MSE is calculated, squaring the differences between predicted values and actual values, it amplifies larger differences. Let's say we're predicting the value of houses (which we are).
+
+Pay more attention to MAE: When being $10,000 off is twice as bad as being $5,000 off.
+
+Pay more attention to MSE: When being $10,000 off is more than twice as bad as being $5,000 off.
+
+For more resources on evaluating a machine learning model, be sure to check out the following resources:
+
+Scikit-Learn documentation for metrics and scoring (quantifying the quality of predictions)
+
+Beyond Accuracy: Precision and Recall by Will Koehrsen
+
+Stack Overflow answer describing MSE (mean squared error) and RSME (root mean squared error)
+==============================================================================================================
+
+
+===================================================
+# r2_score or coeff of determination
+
+# Import the RandomForestRegressor model class from the ensemble module
+from sklearn.ensemble import RandomForestRegressor
+
+# Setup random seed
+np.random.seed(42)
+
+# Split data into features (X) and labels (y)
+X = housing_df.drop("target", axis=1)
+y = housing_df["target"]
+
+# Split into train and test sets
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
+
+# Institate and fit the model (on the training set)
+model = RandomForestRegressor()
+model.fit(X_train, y_train)
+
+# Calculate the models R^2 score
+model.score(X_test, y_test)
+
+0.806652667101436
+
+# Mean absolute error. Needs to be lower
+
+from sklearn.metrics import mean_absolute_error
+
+y_preds = model.predict(X_test)
+mae = mean_absolute_error(y_test, y_preds)
+mae
+
+0.32656738464147306
+
+
+# Mean squared error
+from sklearn.metrics import mean_squared_error
+
+mse = mean_squared_error(y_test, y_preds)
+mse
+
+0.25336408094921037
+============================================================
+
+## Functions
+
+
+Classification functions
+For:
+
+Accuracy we can use sklearn.metrics.accuracy_score
+Precision we can use sklearn.metrics.precision_score
+Recall we can use sklearn.metrics.recall_score
+F1 we can use sklearn.metrics.f1_score
+
+==============================================
+from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.model_selection import train_test_split
+
+np.random.seed(42)
+
+X = heart_disease.drop("target", axis=1)
+y = heart_disease["target"]
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
+
+clf = RandomForestClassifier(n_estimators=100)
+clf.fit(X_train, y_train)
+
+# Make predictions
+y_preds = clf.predict(X_test)
+
+# Evaluate the classifier
+print("Classifier metrics on the test set:")
+print(f"Accuracy: {accuracy_score(y_test, y_preds) * 100:.2f}%")
+print(f"Precision: {precision_score(y_test, y_preds):.2f}")
+print(f"Recall: {recall_score(y_test, y_preds):.2f}")
+print(f"F1: {f1_score(y_test, y_preds):.2f}")
+
+Classifier metrics on the test set:
+Accuracy: 85.25%
+Precision: 0.85
+Recall: 0.88
+F1: 0.86
+
+==================================================
+
+
+Regression Functions
+
+======================================================
+
+from sklearn.metrics import r2_score, mean_absolute_error, mean_squared_error
+from sklearn.ensemble import RandomForestRegressor
+from sklearn.model_selection import train_test_split
+
+np.random.seed(42)
+
+# Create X & y
+X = housing_df.drop("target", axis=1)
+y = housing_df["target"]
+
+# Split data
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
+
+# Create model
+model = RandomForestRegressor()
+
+# Fit model
+model.fit(X_train, y_train)
+
+# Make predictions
+y_preds = model.predict(X_test)
+
+# Evaluate model using evaluation functions
+print("Regression metrics on the test set")
+print(f"R2 score: {r2_score(y_test, y_preds)}")
+print(f"MAE: {mean_absolute_error(y_test, y_preds)}")
+print(f"MSE: {mean_squared_error(y_test, y_preds)}")
+
+Regression metrics on the test set
+R2 score: 0.806652667101436
+MAE: 0.32656738464147306
+MSE: 0.25336408094921037
+
+======================================================================
+
+
+
+
+
+
+
+# IMPROVING A MODEL
+
+The first predictions you make with a model are generally referred to as baseline predictions.
+
+It's similar for the first evaluation metrics you get. These are generally referred to as baseline metrics.
+
+Your next goal is to improve upon these baseline metrics.
+
+How?
+
+Experiment, experiment, experiment!
+
+Two of the main methods to improve baseline metrics are:
+
+From a data perspective.
+From a model perspective.
+From a data perspective asks:
+
+Could we collect more data? In machine learning, more data is generally better, as it gives a model more opportunities to learn patterns.
+Could we improve our data? This could mean filling in misisng values or finding a better encoding (turning data into numbers) strategy.
+From a model perspective asks:
+
+Is there a better model we could use? If you've started out with a simple model, could you use a more complex one? (we saw an example of this when looking at the Scikit-Learn machine learning map, ensemble methods are generally considered more complex models)
+
+Could we improve the current model? If the model you're using performs well straight out of the box, can the hyperparameters be tuned to make it even better?
+
+Note: Patterns in data are also often referred to as data parameters. The difference between parameters and hyperparameters is a machine learning model seeks to find parameters in data on its own, where as, hyperparameters are settings on a model which a person (you) can adjust.
+
+#HYPERPARAMETER Tuning
+
+1. By hand
+2. Randomly with sklearn.model_selection.RandomizedSearchCV
+3. Exhaustively with sklearn.model_selection.GridSearchCV
+
+# correlation analysis
+
+# forward/backward features
+
+# LOADING AND SAVING A MODEL
