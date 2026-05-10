@@ -2840,14 +2840,327 @@ Could we improve the current model? If the model you're using performs well stra
 
 Note: Patterns in data are also often referred to as data parameters. The difference between parameters and hyperparameters is a machine learning model seeks to find parameters in data on its own, where as, hyperparameters are settings on a model which a person (you) can adjust.
 
+Hyperparameters vs. Parameters
+
+Parameters = model find these patterns in data
+Hyperparameters = settings on a model you can adjust to (potentially) improve its ability to find patterns
+
+==============================================
+from sklearn.ensemble import RandomForestClassifier
+
+clf = RandomForestClassifier()
+
+clf.get_params()
+
+{'bootstrap': True,
+ 'ccp_alpha': 0.0,
+ 'class_weight': None,
+ 'criterion': 'gini',
+ 'max_depth': None,
+ 'max_features': 'sqrt',
+ 'max_leaf_nodes': None,
+ 'max_samples': None,
+ 'min_impurity_decrease': 0.0,
+ 'min_samples_leaf': 1,
+ 'min_samples_split': 2,
+ 'min_weight_fraction_leaf': 0.0,
+ 'monotonic_cst': None,
+ 'n_estimators': 100,
+ 'n_jobs': None,
+ 'oob_score': False,
+ 'random_state': None,
+ 'verbose': 0,
+ 'warm_start': False}
+ ===============================================
+
 #HYPERPARAMETER Tuning
+
 
 1. By hand
 2. Randomly with sklearn.model_selection.RandomizedSearchCV
 3. Exhaustively with sklearn.model_selection.GridSearchCV
+
+
+
+# BY HAND
+
+
+You train a model on a training set and evaluate it on a test dataset.
+
+But hyperparameter tuning introduces a thrid set, a validation set.
+
+Now the process becomes:
+
+Train a model on the training data.
+(Try to) improve the model's hyperparameters on the validation set.
+Evaluate the model on the test set.
+
+=====================================================================================
+def evaluate_preds(y_true: np.array, 
+                   y_preds: np.array) -> dict:
+    """
+    Performs evaluation comparison on y_true labels vs. y_pred labels.
+
+    Returns several metrics in the form of a dictionary.
+    """
+    accuracy = accuracy_score(y_true, y_preds)
+    precision = precision_score(y_true, y_preds)
+    recall = recall_score(y_true, y_preds)
+    f1 = f1_score(y_true, y_preds)
+    metric_dict = {"accuracy": round(accuracy, 2),
+                   "precision": round(precision, 2), 
+                   "recall": round(recall, 2),
+                   "f1": round(f1, 2)}
+    print(f"Acc: {accuracy * 100:.2f}%")
+    print(f"Precision: {precision:.2f}")
+    print(f"Recall: {recall:.2f}")
+    print(f"F1 score: {f1:.2f}")
+
+    return metric_dict
+
+from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score
+from sklearn.model_selection import train_test_split
+from sklearn.ensemble import RandomForestClassifier
+import numpy as np
+import pandas as pd
+
+# Set the seed
+np.random.seed(42)
+
+# Read in the data
+# heart_disease = pd.read_csv("../data/heart-disease.csv") # load in from local directory
+heart_disease = pd.read_csv("https://raw.githubusercontent.com/mrdbourke/zero-to-mastery-ml/master/data/heart-disease.csv") # load directly from URL (source: https://github.com/mrdbourke/zero-to-mastery-ml/blob/master/data/heart-disease.csv)
+
+# Split into X (features) & y (labels)
+X = heart_disease.drop("target", axis=1)
+y = heart_disease["target"]
+
+# Training and test split (70% train, 30% test)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3)
+
+# Create validation and test split by spliting testing data in half (30% test -> 15% validation, 15% test)
+X_valid, X_test, y_valid, y_test = train_test_split(X_test, y_test, test_size=0.5)
+
+clf = RandomForestClassifier()
+clf.fit(X_train, y_train)
+
+# Make predictions
+y_preds = clf.predict(X_valid)
+
+# Evaluate the classifier
+baseline_metrics = evaluate_preds(y_valid, y_preds)
+baseline_metrics
+
+Acc: 80.00%
+Precision: 0.78
+Recall: 0.88
+F1 score: 0.82
+{'accuracy': 0.8, 'precision': 0.78, 'recall': 0.88, 'f1': 0.82}
+
+
+np.random.seed(42)
+
+# Create a second classifier
+clf_2 = RandomForestClassifier(n_estimators=200)
+clf_2.fit(X_train, y_train)
+
+# Make predictions
+y_preds_2 = clf_2.predict(X_valid)
+
+# Evaluate the 2nd classifier
+clf_2_metrics = evaluate_preds(y_valid, y_preds_2)
+
+Acc: 77.78%
+Precision: 0.77
+Recall: 0.83
+F1 score: 0.80
+
+=========================================================================================
+
+# Hyperparameter tuning with RandomizedSearchCV
+
+Scikit-Learn's sklearn.model_selection.RandomizedSearchCV allows us to randomly search across different hyperparameters to see which work best.
+
+
+# Hyperparameter tuning with GridSearchCV
+There's one more way we could try to improve our model's hyperparamters.
+
+And it's with sklearn.model_selection.GridSearchCV.
+
+The main difference between GridSearchCV and RandomizedSearchCV is GridSearchCV searches across a grid of hyperparamters exhaustively (it will try every combination possible), where as, RandomizedSearchCV searches across a grid of hyperparameters randomly (stopping after n_iter combinations).
+
+
+===========================================================================================
+# Hyperparameter grid RandomizedSearchCV will search over
+param_distributions = {"n_estimators": [10, 50, 100, 200],
+                       "max_depth": [None, 5],
+                       "max_features": ["sqrt", "log2", None],
+                       "min_samples_split": [2, 4],
+                       "min_samples_leaf": [1, 2]}
+					   
+# Count the total number of hyperparameter combinations to test
+total_randomized_hyperparameter_combintions_to_test = np.prod([len(value) for value in param_distributions.values()])
+print(f"There are {total_randomized_hyperparameter_combintions_to_test} potential combinations of hyperparameters to test.")
+
+
+# Start the timer
+import time
+start_time = time.time()
+
+from sklearn.model_selection import RandomizedSearchCV, train_test_split
+
+np.random.seed(42)
+
+# Split into X & y
+X = heart_disease.drop("target", axis=1)
+y = heart_disease["target"]
+
+# Split into train and test sets
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
+
+# Set n_jobs to -1 to use all available cores on your machine (if this causes errors, try n_jobs=1)
+clf = RandomForestClassifier(n_jobs=-1)
+
+# Setup RandomizedSearchCV 
+n_iter = 30 # try 30 models total
+rs_clf = RandomizedSearchCV(estimator=clf,
+                            param_distributions=param_distributions,
+                            n_iter=n_iter, 
+                            cv=5, # 5-fold cross-validation
+                            verbose=2) # print out results
+
+# Fit the RandomizedSearchCV version of clf (does cross-validation for us, so no need to use a validation set)
+rs_clf.fit(X_train, y_train);
+
+# Finish the timer
+end_time = time.time()
+print(f"[INFO] Total time taken for {n_iter} random combinations of hyperparameters: {end_time - start_time:.2f} seconds.")
+
+rs_clf.best_params_
+
+{'n_estimators': 50,
+ 'min_samples_split': 2,
+ 'min_samples_leaf': 1,
+ 'max_features': None,
+ 'max_depth': None}
+ 
+# Make predictions with the best hyperparameters
+rs_y_preds = rs_clf.predict(X_test)
+
+# Evaluate the predictions
+rs_metrics = evaluate_preds(y_test, rs_y_preds)
+
+Acc: 80.33%
+Precision: 0.81
+Recall: 0.81
+F1 score: 0.81
+
+============================================================================================
+
 
 # correlation analysis
 
 # forward/backward features
 
 # LOADING AND SAVING A MODEL
+
+Using pickle
+
+
+# Saving a model
+=======================================================================
+# using pickle
+
+import pickle
+
+# Save an extisting model to file
+pickle.dump(rs_clf, open("rs_random_random_forest_model_1.pkl", "wb"))
+========================================================================
+
+# loading a model
+
+========================================================================
+# Load a saved model
+loaded_pickle_model = pickle.load(open("rs_random_random_forest_model_1.pkl", "rb"))
+=========================================================================
+
+
+-- you can use joblib to save and load model
+
+
+#using Joblib
+
+==========================================================================
+from joblib import dump, load
+
+# Save model to file
+dump(gs_clf, filename="gs_random_forest_model_1.joblib")
+['gs_random_forest_model_1.joblib']
+# Import a saved joblib model
+loaded_joblib_model = load(filename="gs_random_forest_model_1.joblib")
+============================================================================
+
+which one should you use, pickle or joblib?
+
+According to Scikit-Learn's model persistence documentation, they suggest it may be more efficient to use joblib as it's more efficient with large numpy arrays (which is what may be contained in trained/fitted Scikit-Learn models).
+
+
+# PIPELINES
+
+
+====================================================================================
+
+# Getting data ready
+import pandas as pd
+from sklearn.compose import ColumnTransformer
+from sklearn.pipeline import Pipeline
+from sklearn.impute import SimpleImputer
+from sklearn.preprocessing import OneHotEncoder
+
+# Modelling
+from sklearn.ensemble import RandomForestRegressor
+from sklearn.model_selection import train_test_split, GridSearchCV
+
+# Setup random seed
+import numpy as np
+np.random.seed(42)
+
+# Import data and drop the rows with missing labels
+data = pd.read_csv("https://raw.githubusercontent.com/mrdbourke/zero-to-mastery-ml/master/data/car-sales-extended-missing-data.csv")
+data.dropna(subset=["Price"], inplace=True)
+
+# Define different features and transformer pipelines
+categorical_features = ["Make", "Colour"]
+categorical_transformer = Pipeline(steps=[
+    ("imputer", SimpleImputer(strategy="constant", fill_value="missing")),
+    ("onehot", OneHotEncoder(handle_unknown="ignore"))])
+
+door_feature = ["Doors"]
+door_transformer = Pipeline(steps=[
+    ("imputer", SimpleImputer(strategy="constant", fill_value=4))])
+
+numeric_features = ["Odometer (KM)"]
+numeric_transformer = Pipeline(steps=[
+    ("imputer", SimpleImputer(strategy="mean"))
+])
+
+# Setup preprocessing steps (fill missing values, then convert to numbers)
+preprocessor = ColumnTransformer(
+    transformers=[
+        ("cat", categorical_transformer, categorical_features),
+        ("door", door_transformer, door_feature),
+        ("num", numeric_transformer, numeric_features)])
+
+# Create a preprocessing and modelling pipeline
+model = Pipeline(steps=[("preprocessor", preprocessor),
+                        ("model", RandomForestRegressor(n_jobs=-1))])
+
+# Split data
+X = data.drop("Price", axis=1)
+y = data["Price"]
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
+
+# Fit and score the model
+model.fit(X_train, y_train)
+model.score(X_test, y_test)
+======================================================================================================
